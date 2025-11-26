@@ -4,7 +4,7 @@ const sourceObject = {
   str: 'some text',
   log: console.log,
 }
-function change(key){
+function get(key){
     return sourceObject[key]
 }
 
