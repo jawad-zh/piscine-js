@@ -2,7 +2,7 @@ function words(s){
     return s.split(" ")
 }
 function sentence(arr){
-    arr.join(" ")
+   return  arr.join(" ")
 }
 function yell(s){
     return s.toUpperCase()
