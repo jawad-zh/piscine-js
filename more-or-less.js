@@ -1,12 +1,4 @@
-function more(n){
-    return n+1
-}
-function less(n){
-    return n-1
-}
-function add(first , second){
-    return first + second
-}
-function sub(first ,second){
-    return first / second
-}
+const more = (n)=> n+1;
+const less = (n)=> n-1;
+const add = (first,second)=> first + second;
+const sub = (first,second)=> first - second
