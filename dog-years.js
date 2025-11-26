@@ -10,5 +10,5 @@ const planetes = {
 }
 
 function dogYears(planetName , dogAgeBySecond){
-    return ((dogAgeBySecond/31557600)*7 / planetes[planetName] )
+    return ((dogAgeBySecond/31557600)*7 / planetes[planetName] ).toFixed(2)
 }
