@@ -9,4 +9,4 @@
     is.obj =  (arg)=> (typeof(arg) === 'object' && !Array.isArray(arg) && arg!== null)
     is.fun =  (arg)=> typeof(arg) === 'function' 
     is.falsy =  (arg)=> !arg 
-    is.truthy =  (arg)=> !falsy(arg)
+    is.truthy =  (arg)=> !is.falsy(arg)
