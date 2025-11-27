@@ -8,5 +8,5 @@
    is.arr =  (arg)=> Array.isArray(arg)  
     is.obj =  (arg)=> (typeof(arg) === 'object' && !Array.isArray(arg) && arg!== null)
     is.fun =  (arg)=> typeof(arg) === 'function' 
-    is.truthy =  (arg)=> arg === true 
-    is.falsy =  (arg)=> arg === false 
+    is.falsy =  (arg)=> !arg 
+    is.truthy =  (arg)=> !falsy(arg)
