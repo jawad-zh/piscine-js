@@ -58,6 +58,8 @@ function modulo(a,b){
     }
     if (b ===  0){
         return NaN
+    }else if (b < 0){
+        b = - b
     }
     while(a > b){
         a -= b
