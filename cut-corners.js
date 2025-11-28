@@ -1,4 +1,7 @@
 function round(number){
+    if (number === 0){
+        return 0
+    }
         let normal =getNum(number);
         let decimal = number - normal;
         if (decimal < 0){
@@ -18,6 +21,9 @@ function round(number){
     
 }
 function ceil(number){
+    if (number === 0){
+        return 0
+    }
         let normal =getNum(number);   
             if (normal >= 0){
                 normal += 1
@@ -29,6 +35,9 @@ function ceil(number){
         }
     
 function floor(number){
+    if (number === 0){
+        return 0
+    }
         let normal =getNum(number);
         let decimal = number - normal;
         if (decimal < 0){
@@ -46,6 +55,9 @@ function floor(number){
     }
 
 function trunc(number){
+    if (number === 0){
+        return 0
+    }
         let normal =getNum(number); 
          return normal
 }
