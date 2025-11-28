@@ -17,9 +17,10 @@ function keepLast(string){
     return string.slice(end)
 }
 function keepFirstLast(string){
-    if (string.length<=2){
+    if (string.length<=4){
         return string
     }
      let end = string.length-2
   return string.slice(0,2) + string.slice(end)
 }
+console.log(keepFirstLast('afd'))
