@@ -40,7 +40,7 @@ function divide(a,b){
         return Infinity
     }
     
-  while(a>=0){
+  while(a>b){
     a -= b
     count++
   }
@@ -68,4 +68,4 @@ function modulo(a,b){
         return a
     }
 }
-console.log(divide(34, 78))
+console.log(divide(78, 34) )
