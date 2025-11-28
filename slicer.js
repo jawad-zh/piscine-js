@@ -1,9 +1,9 @@
-function slice( stringOrSlice , start, end = stringOrSlice.length-1 ){
+function slice( stringOrSlice , start, end = stringOrSlice.length){
     let isArr = Array.isArray(stringOrSlice) ? true : false;
     let Result = isArr ? [] : ""
     start = start >= 0 ? start : -(-start-stringOrSlice.length)
     console.log("start",start)
-    for (let i = start ; i <= end ; i++){
+    for (let i = start ; i < end ; i++){
         if (isArr){
             Result.push(stringOrSlice[i])
         }else{
@@ -12,4 +12,4 @@ function slice( stringOrSlice , start, end = stringOrSlice.length-1 ){
     }
     return Result
 }
-console.log(slice('abcdef', 2))
+console.log(slice('abcdef', 3))
