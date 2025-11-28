@@ -59,7 +59,7 @@ function modulo(a,b){
     if (b ===  0){
         return NaN
     }
-    while(a > 0){
+    while(a > b){
         a -= b
     }
     if (numa ===0){
@@ -68,3 +68,4 @@ function modulo(a,b){
         return a
     }
 }
+console.log(modulo(34, 78))
