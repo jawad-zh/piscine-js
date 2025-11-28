@@ -25,7 +25,7 @@ function lastIndexOf(arr ,ele,start){
     for (let i= begn ; i < arr.length ; i++){
         if (arr[i] === ele){
             found = true
-            index = i
+            index++
         }
     }
     if (!found){
@@ -41,4 +41,4 @@ function includes(arr,el){
     }
     return false
 }
-console.log(indexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2))
+console.log(lastIndexOf(["t", 0, 0, "t"], "t", 2))
