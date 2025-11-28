@@ -1,71 +1,53 @@
-function round(arr){
-    let result =[]
-    for (let i =0 ; i < arr.length ; i++){
-        let normal =getNum(arr[i]);
-        let decimal = arr[i] - normal;
+function round(number){
+        let normal =getNum(number);
+        let decimal = number - normal;
         if (decimal < 0){
             decimal = -decimal
         }
         if (decimal >= 0.5){
             if (normal >= 0){
                 normal += 1
-                result.push(normal)
+                return normal
             }else{
              normal -= 1
-            result.push(normal)
+            return normal
         }
         }else{
-            result.push(normal)
+            return normal
         }
-    }
-
-    return result
+    
 }
-function ceil(arr){
-    let result =[]
-    for (let i =0 ; i < arr.length ; i++){
-        let normal =getNum(arr[i]);   
-        
+function ceil(number){
+        let normal =getNum(number);   
             if (normal >= 0){
                 normal += 1
-                result.push(normal)
+                return normal
             }else{
              
-            result.push(normal)
+            return normal
         }
         }
-        return result
-    }
-
-function floor(arr){
-    let result =[]
-    for (let i =0 ; i < arr.length ; i++){
-        let normal =getNum(arr[i]);
-        let decimal = arr[i] - normal;
+    
+function floor(number){
+        let normal =getNum(number);
+        let decimal = number - normal;
         if (decimal < 0){
             decimal = -decimal
         }
         
             if (normal >= 0){
                 
-                result.push(normal)
+               return  normal
             }else{
              normal -= 1
-            result.push(normal)
+            return normal
         }
        
     }
 
-    return result
-}
-function trunc(arr){
-    let result =[]
-    for (let i =0 ; i < arr.length ; i++){
-        let normal =getNum(arr[i]); 
-                result.push(normal)
-    }
-
-    return result
+function trunc(number){
+        let normal =getNum(number); 
+         return normal
 }
 function getmill(n){
     let mill = 1;
