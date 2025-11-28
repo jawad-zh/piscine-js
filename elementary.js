@@ -24,9 +24,6 @@ function divide(a,b){
     let count =0;
     let anum = 1
     let bnumb =1
-    if (b > a){
-        return 0
-    }
     if(a < 0){
         anum =0
         a = -a
@@ -38,6 +35,9 @@ function divide(a,b){
         b = -b
     }else if (b === 0){
         return Infinity
+    }
+    if (b > a && anum!==0){
+        return 0
     }
     
   while(a>b){
@@ -68,4 +68,3 @@ function modulo(a,b){
         return a
     }
 }
-console.log(divide(78, 34) )
