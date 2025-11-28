@@ -2,12 +2,14 @@ function indexOf(arr ,ele,start){
     let found = false
     let index = 0
     let begn = start ? start :0;
+    console.log("begn",begn)
     if ((begn > arr.length-1)){
         return -1
     }
     for (let i= begn ; i < arr.length ; i++){
         if (arr[i] === ele){
             index = i
+            found = true
             break
         }
     }
@@ -39,3 +41,4 @@ function includes(arr,el){
     }
     return false
 }
+console.log(indexOf([1, 2, 3, 4, 5, 4, 3, 2, 1], 2))
