@@ -68,4 +68,3 @@ function modulo(a,b){
         return a
     }
 }
-console.log(modulo(34, 78))
