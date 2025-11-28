@@ -18,8 +18,8 @@ function indexOf(arr ,ele,start){
     return index
 }
 function lastIndexOf(arr ,ele,start){
-    let begn = start ? start :0;
-    for (let i= ((arr.length)-1)-begn ; i >=0 ; i--){
+    let begn = start ? start :arr.length-1;
+    for (let i= begn ; i >=0 ; i--){
         if (arr[i] === ele){
             return i
         }
@@ -34,4 +34,3 @@ function includes(arr,el){
     }
     return false
 }
-console.log(lastIndexOf(["t", 0, 0, "t"], "t", 2))
