@@ -7,7 +7,7 @@ function indexOf(arr ,ele,start){
     }
     for (let i= begn ; i < arr.length ; i++){
         if (arr[i] === ele){
-            index = i
+            index = i 
             found = true
             break
         }
@@ -19,7 +19,7 @@ function indexOf(arr ,ele,start){
 }
 function lastIndexOf(arr ,ele,start){
     let begn = start ? start :0;
-    for (let i= (arr.length)-1 ; i >=begn ; i--){
+    for (let i= ((arr.length)-1)-begn ; i >=0 ; i--){
         if (arr[i] === ele){
             return i
         }
