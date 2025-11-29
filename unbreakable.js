@@ -15,6 +15,7 @@ function split(string ,seperator){
                 words.push(string[i])
                 continue
             }
+            return words
                 }
     for (let i =0 ; i < string.length ; i++){
         if(found){
@@ -45,3 +46,4 @@ function split(string ,seperator){
         }
     return words
 }
+console.log(split(['R', 'i', 'a', 'd'],""))
