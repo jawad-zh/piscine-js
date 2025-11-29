@@ -2,8 +2,6 @@ function split(string ,seperator){
     if (string===""){
         return [""]
     }
-    // let first = true
-    // let tracker =0
     let count =0;
     let found = false;
     let sLenght = seperator.length
@@ -46,4 +44,12 @@ function split(string ,seperator){
             words.push(word)
     return words
 }
-console.log(split('',"jawa"))
+function join(arr, seperator){
+    let result ="";
+    for (let i =0 ; i< arr.length ; i++){
+        result+=arr[i]
+        if (i!==arr.length-1){
+            result += seperator
+        }
+    }
+}
