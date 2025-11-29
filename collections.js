@@ -3,7 +3,7 @@ const arrToStr = (arr) => arr.join("")
 const setToArr = (set) => [...set]
 const setToStr = (set) => [...set].join("")
 const strToArr = (str) => str.split("")
-const strToSet = (str) => {let arr = str.split(" "); return new Set(arr)}
+const strToSet = (str) => new Set(...str)
 const mapToObj = (map) => Object.fromEntries(map)
 const objToArr = (obj) => Object.entries(obj);
 const objToMap = (obj) => Object.entries(obj);
