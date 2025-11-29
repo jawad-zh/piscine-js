@@ -11,6 +11,10 @@ function split(string ,seperator){
         return string
     }
     for (let i =0 ; i < string.length ; i++){
+        if (seperator==""){
+            words.push(string[i])
+            continue
+        }
         if(found){
             console.log("count",count,"fixlenght:",fixsLenght)
             count ++
