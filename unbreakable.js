@@ -40,7 +40,8 @@ function split(string ,seperator){
         
     }
         words.push(word)
-    
+        if (string===""){
+            return [""]
+        }
     return words
 }
-console.log(split("kjkrrkj","rr"))
