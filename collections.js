@@ -10,8 +10,7 @@ const objToMap = (obj) => new Map(Object.entries(obj));
 const arrToObj = (arr) => {return {...arr}};
 const strToObj= (str) => {return {...str}};
 
-
-function superTyperOf(arg){
+function superTypeOf(arg){
    let typeArr= Object.prototype.toString.call(arg).split(" ")
    let type = typeArr[1].slice(0,typeArr[1].length-1)
    if (type ==='Null'){
