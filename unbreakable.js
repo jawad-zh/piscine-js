@@ -1,4 +1,7 @@
 function split(string ,seperator){
+    if (string===""){
+        return [""]
+    }
     // let first = true
     // let tracker =0
     let count =0;
@@ -41,10 +44,6 @@ function split(string ,seperator){
         
     }
             words.push(word)
-        if (string===""){
-            let result = []
-            return result
-        }
     return words
 }
 console.log(split('',"jawa"))
