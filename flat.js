@@ -1,4 +1,4 @@
-function flat(arr,num=0){
+function flat(arr,num=1){
     if (num==0){
         return  arr
     }
@@ -12,3 +12,4 @@ function flat(arr,num=0){
     }
     return result
 }
+console.log((flat([1, [2]])))
