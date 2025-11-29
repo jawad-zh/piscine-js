@@ -42,8 +42,9 @@ function split(string ,seperator){
     }
             words.push(word)
         if (string===""){
-            return [""]
+            let result = []
+            return result
         }
     return words
 }
-console.log(split(['R', 'i', 'a', 'd'],""))
+console.log(split('',"jawa"))
