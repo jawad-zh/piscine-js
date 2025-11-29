@@ -52,4 +52,5 @@ function join(arr, seperator){
             result += seperator
         }
     }
+    return result
 }
