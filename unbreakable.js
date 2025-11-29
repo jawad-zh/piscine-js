@@ -10,13 +10,14 @@ function split(string ,seperator){
     if (string.length < sLenght){
         return string
     }
+      if (seperator==""){
+            for (let i =0 ; i<string.length ;i++){
+                words.push(string[i])
+                continue
+            }
+                }
     for (let i =0 ; i < string.length ; i++){
-        if (seperator==""){
-            words.push(string[i])
-            continue
-        }
         if(found){
-            console.log("count",count,"fixlenght:",fixsLenght)
             count ++
             if (count ===fixsLenght){
                 found =false
@@ -31,7 +32,6 @@ function split(string ,seperator){
         if (flag !== seperator){
            
             word += string[i]
-            console.log(i,word)
         }else{
             found = true
             words.push(word)
@@ -39,7 +39,7 @@ function split(string ,seperator){
         }
         
     }
-        words.push(word)
+            words.push(word)
         if (string===""){
             return [""]
         }
