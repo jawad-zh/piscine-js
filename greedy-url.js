@@ -1,7 +1,7 @@
 `qqq http:// qqqq q qqqqq https://something.com/hello qqqqqqq qhttp://example.com/hello?you=something&something=you`
 
 function getURL(str){
-    const regex = /((https)|(http)):\/\/[a-zA-Z]+.[a-zA-z]+\/?[^\s]+/g
+    const regex = /((https)|(http)):\/\/\w+\/?[^\s]+/g
     return str.match(regex)
 }
 function greedyQuery(str){
