@@ -1,5 +1,5 @@
 function letterSpaceNumber(str){
-    const regex = /\w\s\d{1}(?!\w)/g
+    const regex = /\w\s\d(?!\w)/g
     let arr = str.match(regex)
-    return arr
+    return arr || []
 }
