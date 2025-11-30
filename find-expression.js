@@ -1,7 +1,8 @@
 function findexpration(number){
     let current =1
     let path ="1"
-   
+    let add4 = '+4'
+    let mu12='*2'
     if (number < 0 || number === undefined){
         return  undefined
     }
@@ -24,3 +25,4 @@ function finding(number,current,path){
         }
     }
 }
+console.log(findexpration(10))
