@@ -7,7 +7,8 @@ function findexpration(number){
     return (finding(number,current,path))
 }
 function finding(number,current,path){
-  
+    let add4 = "+4"
+    let mu12 = "*2"
     if (current > number){
         return undefined
     }else if (current === number){
