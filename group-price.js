@@ -1,6 +1,6 @@
 function groupPrice(str){
-    let all = str.match(/(?<=(USD))\d+.\d+/g)
-    let normal = str.match(/(?<=(USD))\d+(?=.)/g)
+    let all = str.match(/[(USD)|($)]\d+.\d+/g)
+    let normal = str.match(/(?<=[(USD)|($)])\d+(?=.)/g)
     let decimal = str.match(/(?<=\.)\d+/g)
     if (all === null){
         return []
@@ -15,3 +15,4 @@ function groupPrice(str){
     }    
     return result
 }
+console.log(groupPrice('The price of the cereals is $4.00.'));
