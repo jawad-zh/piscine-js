@@ -8,7 +8,7 @@ function groupPrice(str){
     let temp = []
     let result =[]
     for (let i=0 ; i < all.length ; i++){
-        temp.push(`USD${all[i]}`)
+        temp.push(`${all[i]}`)
         temp.push(normal[i])
         temp.push(decimal[i])
         result.push(temp)
