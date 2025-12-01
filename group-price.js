@@ -4,7 +4,7 @@ function groupPrice(str){
     let decimal = str.match(/(?<=\.)\d+/g)
     let temp = []
     let result =[]
-    for (i=0 ; i < all.length ; i++){
+    for (let i=0 ; i < all.length ; i++){
         temp.push(`USD${all[i]}`)
         temp.push(normal[i])
         temp.push(decimal[i])
