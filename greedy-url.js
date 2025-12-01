@@ -1,33 +1,13 @@
 function getURL(str){
-    const regex = /((https)|(http)):\/\/\w+\/?[^\s]+/g
-    return str.match(regex)
+    return str.match(/https?:\/\/\S+/g) 
+    
 }
 function greedyQuery(str){
-    const regex = /&/g
-    let arr = getURL(str)
-    let result = []
-    for (let i=0 ; i < arr.length ;i++){
-        let temp = arr[i].match(regex)
-        if (temp === null){
-            continue
-        }else{
-            if (temp.length>=2){
-                result.push(arr[i])
-            }
-        }
-    }
-    return result
+    const regex = /https?:\/\/\S+\?(&?[^=\s&]+=[^=\s&]+){3}/g
+    return str.match(regex)
+    
 }
 function notSoGreedy(str){
-        const regex = /&/g
-    let arr = getURL(str)
-    let result = []
-    for (let i=0 ; i < arr.length ;i++){
-        let temp = arr[i].match(regex)
-            if (temp!= null && temp.length===1){
-                result.push(arr[i])
-            }
-        
-    }
-    return result
+  const regex = /https?:\/\/\S+\?(&?[^=\s&]+=[^=\s&]+){2,3}(?=\s)/g
+  return str.match(regex)
 }
