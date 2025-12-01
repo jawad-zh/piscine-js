@@ -3,7 +3,7 @@ function getURL(str){
     
 }
 function greedyQuery(str){
-    const regex = /https?:\/\/\S+\?(&?[^=\s&]+=[^=\s&]+){3}/g
+    const regex = /https?:\/\/\S+\?(&?[^=\s&]+=[^=\s&]+){3}\S+/g
     return str.match(regex)
     
 }
