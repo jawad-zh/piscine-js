@@ -2,6 +2,9 @@ function groupPrice(str){
     let all = str.match(/(?<=(USD))\d+.\d+/g)
     let normal = str.match(/(?<=(USD))\d+(?=.)/g)
     let decimal = str.match(/(?<=\.)\d+/g)
+    if (all === null){
+        return []
+    }
     let temp = []
     let result =[]
     for (let i=0 ; i < all.length ; i++){
