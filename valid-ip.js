@@ -5,10 +5,10 @@ function findIP(str){
         return []
     }
     let result = []
-
         for (let i =0 ; i < arr.length ; i++){
             let ip = (arr[i].match(/\d+.\d+.\d+.\d+/)).join("").split(".")
-            let port =(arr[i].match(/(?<=:)\d+/)).join("")
+            let port =(arr[i].match(/(?<=:)\d+/))            
+            port = null ? 0 : port
             for (let j = 0 ; j < ip.length ;j++){
                 if (+ip[j]>=0 && +ip[j]<=255){
                     if (j === +ip.length-1 && (+port <=65535 &&  +port>=0)){
@@ -18,9 +18,6 @@ function findIP(str){
                     break
                 }
             }
-            
-            
-            
         }
     
     return result
