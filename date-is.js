@@ -21,7 +21,7 @@ function isFuture(date){
   }  
   return false
 }
-function isPast(isPast){
+function isPast(date){
       let now = Date.now()
   if (isValid(date) && now > date){
     return true
