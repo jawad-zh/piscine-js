@@ -1,12 +1,12 @@
 function matchCron(cron,date){
-    let compartCrone = cron.split("")
+    let compartCrone = cron.split("")    
     let storeCrone= {
         "Minute":compartCrone[0],
-        "Hour":compartCrone[1],
-        "DayOfMonth":compartCrone[2],
-        "Month":compartCrone[3],
-        "DayOfWeek":compartCrone[4]
-    }
+        "Hour":compartCrone[2],
+        "DayOfMonth":compartCrone[4],
+        "Month":compartCrone[6],
+        "DayOfWeek":compartCrone[8]
+    }    
    if (storeCrone.Minute != date.getMinutes() && storeCrone.Minute!= "*" ){
     return false
    }else if (storeCrone.Hour != date.getHours() && storeCrone.Hour!="*" ){
@@ -21,3 +21,4 @@ function matchCron(cron,date){
    }
    return true
 }
+console.log(matchCron('* * * * 1', new Date('2020-06-01 00:00:00')));
