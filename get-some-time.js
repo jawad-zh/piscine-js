@@ -6,12 +6,9 @@ function firstDayWeek(week, year) {
     if (day === 0){
         day = 7
     }
-    let dt = date.setDate(((date.getDate()-(day -1) + ((week-1)*7)) ))
-    console.log(new Date(dt));
-    
+     date.setDate(((date.getDate()-(day -1) + ((week-1)*7)) ))
     if (date.getFullYear() < year){                
         return '01-01-' + year
     }
-    
     return  `${String(date.getDate()).padStart(2,'0')}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getFullYear()).padStart(4,'0')}`
 }
