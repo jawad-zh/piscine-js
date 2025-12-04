@@ -1,31 +1,19 @@
 // 
     function firstDayWeek(week, year) {
-    let yeare = new Date(+year,0,1)
-    let datee = yeare.getDay()
-    let firstMonday ;
-    if (datee == 1){
-        firstMonday = datee
-    }else{
-        let offset =  (8 -datee  ) % 7 
-        firstMonday = new Date( +year,0,1+offset)
+    let format = '01-01-' + year 
+    let date = new Date(format)
+    let day = date.getDay()
+    console.log(day);
+    
+    if (day === 0){
+        day += 7
     }
-    console.log("first",firstMonday);
-    
-    while (datee != 1){
-        yeare.getDay -= 1
-        datee-=1
+    date.setDate(((date.getDate()-(day -1) + ((week-1)*7)) ))
+    if (date.getFullYear < year){
+        console.log("date",date.getFullYear(),year);
+        
+        return '01-01-' + year
     }
-    
-    
-    
-    
-    
+    return  `${String(date.getDay()).padStart(2,'0')}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getFullYear()).padStart(4,'0')}`
 }
 
-    
-console.log(firstDayWeek(1, '1000'))
-// console.log(firstDayWeek(52, '1000'))
-// console.log(firstDayWeek(2, '0001'))
-// console.log(firstDayWeek(43, '1983'))
-// console.log(firstDayWeek(23, '0091'))
-// console.log(firstDayWeek(2, '2017'))
