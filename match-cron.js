@@ -13,7 +13,7 @@ function matchCron(cron,date){
     return false
    }else if (storeCrone.DayOfMonth!= date.getDate() && storeCrone.DayOfMonth!= "*"){
     return false
-   }else if (storeCrone.Month != date.getMonth() && storeCrone.Month != "*"){
+   }else if (storeCrone.Month != date.getMonth()+1 && storeCrone.Month != "*"){
     return false
    }else if (storeCrone.DayOfWeek != date.getDay() && storeCrone.DayOfMonth!="*" ){
 
@@ -21,4 +21,4 @@ function matchCron(cron,date){
    }
    return true
 }
-console.log(matchCron('* * * * 1', new Date('2020-06-01 00:00:00')));
+console.log(matchCron('* * * 2 *', new Date('2021-02-01 00:00:00')));
