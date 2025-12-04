@@ -7,18 +7,18 @@ function matchCron(cron,date){
         "Month":compartCrone[6],
         "DayOfWeek":compartCrone[8]
     }    
+    console.log(storeCrone.DayOfWeek,"and time",date.getDay());
+    
    if (storeCrone.Minute != date.getMinutes() && storeCrone.Minute!= "*" ){
     return false
    }else if (storeCrone.Hour != date.getHours() && storeCrone.Hour!="*" ){
     return false
-   }else if (storeCrone.DayOfMonth!= date.getDate() && storeCrone.DayOfMonth!= "*"){
+   }else if (Number(storeCrone.DayOfMonth) != date.getDate() && storeCrone.DayOfMonth!= "*"){
     return false
    }else if (storeCrone.Month != date.getMonth()+1 && storeCrone.Month != "*"){
     return false
-   }else if (storeCrone.DayOfWeek != date.getDay() && storeCrone.DayOfMonth!="*" ){
-
+   }else if (storeCrone.DayOfWeek != date.getDay() && storeCrone.DayOfWeek!="*" ){
        return false
    }
    return true
 }
-console.log(matchCron('* * * 2 *', new Date('2021-02-01 00:00:00')));
