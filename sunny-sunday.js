@@ -1,5 +1,5 @@
 const days = [
-    "Mondya",
+    "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
@@ -7,7 +7,12 @@ const days = [
     "Saturday"
 ]
 function sunnySunday(date){
-    let day = date.getDay() -1
+    let day = date.getDay() 
+    if (day === 6){
+        day = 0
+    }
+    
     return days[day]
     
 }
+
