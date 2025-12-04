@@ -9,5 +9,6 @@ function firstDayWeek(week, year) {
     if (date.getFullYear() < year){        
         return '01-01-' + year
     }
-    return  `${String(date.getDay()).padStart(2,'0')}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getFullYear()).padStart(4,'0')}`
+    return  `${String(date.getDate()).padStart(2,'0')}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getFullYear()).padStart(4,'0')}`
 }
+console.log(firstDayWeek(52, '1000'));
