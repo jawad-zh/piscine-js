@@ -1,10 +1,12 @@
 function countLeapYears(date){
     let result =0
-    for (let i =1 ; i <= date.getFullYear() ; i++){
+    for (let i =1 ; i < date.getFullYear() ; i++){
         if (i % 4 === 0 && i % 100 != 0 || i % 400 === 0){
             result++
         }
     }
     return result
 }
+console.log(countLeapYears(new Date('1664-08-09')));
 
+//countLeapYears(new Date('1664-08-09')) === 403
