@@ -13,8 +13,10 @@ function upperCasingStates (arr){
 
 function fahrenheitToCelsius(arr) {
     return arr.map(function(ele){
-        const regex = /\d+(?=°F)/g
-         return `${(Math.round(((ele.match(regex)-32)*(5/9))))}°C`;
+        if (/\d+(?=°F)/g.test(ele)){
+            ele = `${(Math.round(((ele.match(/\d+(?=°F)/g)-32)*(5/9))))}°C`
+        }
+         return ele ;
     },)
 }
 function trimTemp(arr){
@@ -33,16 +35,3 @@ function tempForecasts(arr){
 })
     return result
 }
-    
-
-console.log(upperCasingStates([
-    'Alabama',
-    'New Jersey',
-    'Alaska',
-    'New York',
-    'California',
-    'New Hampshire',
-    'Ohio',
-    'Texas',
-    'West Virginia',
-  ]), )
