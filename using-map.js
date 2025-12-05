@@ -1,6 +1,15 @@
 const citiesOnly = (arr)=> arr.map(obj => obj.city)
 
-const upperCasingStates = (arr) => arr.map(ele => ele[0].toUpperCase()+ele.slice(1))
+function upperCasingStates (arr){
+   let result= arr.map(function(str){
+        let arr =str.split(" ")
+        for (let i =0 ; i < arr.length ; i++){
+            arr[i] = arr[i][0].toUpperCase()+arr[i].slice(1)
+        }
+        return arr.join(" ")
+    })
+    return result
+}
 
 function fahrenheitToCelsius(arr) {
     return arr.map(function(ele){
@@ -26,10 +35,14 @@ function tempForecasts(arr){
 }
     
 
-console.log(tempForecasts([
-  {
-    city: 'Pasadena',
-    temperature: ' 101 °F',
-    state: 'california',
-    region: 'West',
-  }]))
+console.log(upperCasingStates([
+    'Alabama',
+    'New Jersey',
+    'Alaska',
+    'New York',
+    'California',
+    'New Hampshire',
+    'Ohio',
+    'Texas',
+    'West Virginia',
+  ]), )
