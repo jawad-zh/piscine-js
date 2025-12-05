@@ -13,7 +13,6 @@ function upperCasingStates (arr){
 
 function fahrenheitToCelsius(arr) {
     return arr.map(function(ele){
-        console.log("-----------",ele.match(/(-)?\d+(?=°C)/g));
         if (/(-)?\d+(?=°F)/g.test(ele)){
 
             ele = `${(Math.floor(((ele.match(/(-)?\d+(?=°F)/g)-32)*(5/9))))}°C`
@@ -23,7 +22,9 @@ function fahrenheitToCelsius(arr) {
 }
 function trimTemp(arr){
     arr.map(function(obj){
-        return obj.temperature = obj.temperature.trim()
+        console.log(obj.temperature);
+        
+        return obj.temperature = obj.temperature.replace(" ","")
         
     })    
     return arr
@@ -37,12 +38,56 @@ function tempForecasts(arr){
 })
     return result
 }
-console.log(fahrenheitToCelsius([
-    '30°C',
-    '37°C',
-    '5°C',
-    '12°C',
-    '-13°C',
-    '21°C',
-    '-19°C',
-  ]));
+console.log(trimTemp([
+    {
+      city: 'Los Angeles',
+      state: 'california',
+      region: 'West',
+      temperature: '101°F',
+    }]));
+
+
+
+
+
+// console.log(trimTemp( [
+//     {
+//       city: 'Los Angeles',
+//       state: 'california',
+//       region: 'West',
+//       temperature: '101°F',
+//     },
+//     {
+//       city: 'San Francisco',
+//       state: 'california',
+//       region: 'West',
+//       temperature: '84°F',
+//     },
+//     { city: 'Miami', state: 'Florida', region: 'South', temperature: '112°F' },
+//     {
+//       city: 'New York City',
+//       state: 'new york',
+//       region: 'North East',
+//       temperature: '0°F',
+//     },
+//     { city: 'Juneau', state: 'Alaska', region: 'West', temperature: '21°F' },
+//     {
+//       city: 'Boston',
+//       state: 'massachussetts',
+//       region: 'North East',
+//       temperature: '45°F',
+//     },
+//     {
+//       city: 'Jackson',
+//       state: 'mississippi',
+//       region: 'South',
+//       temperature: '70°F',
+//     },
+//     { city: 'Utqiagvik', state: 'Alaska', region: 'West', temperature: '-1°F' },
+//     {
+//       city: 'Albuquerque',
+//       state: 'new mexico',
+//       region: 'West',
+//       temperature: '95°F',
+//     },
+//   ]));
