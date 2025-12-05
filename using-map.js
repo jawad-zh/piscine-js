@@ -21,12 +21,10 @@ function fahrenheitToCelsius(arr) {
     },)
 }
 function trimTemp(arr){
-    arr.map(function(obj){
-        console.log(obj.temperature);
+    arr.map(function(obj){        
+        return obj.temperature = obj.temperature.trim().split(" ").join("")
         
-        return obj.temperature = obj.temperature.replace(" ","")
-        
-    })    
+    })        
     return arr
 }
 function tempForecasts(arr){
