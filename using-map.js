@@ -14,7 +14,7 @@ function upperCasingStates (arr){
 function fahrenheitToCelsius(arr) {
     return arr.map(function(ele){
         if (/\d+(?=°F)/g.test(ele)){
-            ele = `${(Math.round(((ele.match(/\d+(?=°F)/g)-32)*(5/9))))}°C`
+            ele = `${(Math.floor(((ele.match(/\d+(?=°F)/g)-32)*(5/9))))}°C`
         }
          return ele ;
     },)
@@ -35,3 +35,12 @@ function tempForecasts(arr){
 })
     return result
 }
+console.log(fahrenheitToCelsius([
+    '30°C',
+    '37°C',
+    '5°C',
+    '12°C',
+    '-13°C',
+    '21°C',
+    '-19°C',
+  ]));
