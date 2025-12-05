@@ -17,3 +17,9 @@ function reduce(arr,func,acc=arr[0]){
     }
     return acc
 }
+function reduceRight(arr,func,acc=arr[arr.length-1]){
+    for (let i = acc-1 ; i >=0 ; i--){
+        acc = func(acc,arr[i])
+    }
+    return acc
+}
