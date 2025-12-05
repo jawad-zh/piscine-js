@@ -1,6 +1,6 @@
 function mult2(a){
     return function(b){
-        return a+b
+        return a*b
     }
 }
 function add3(a){
