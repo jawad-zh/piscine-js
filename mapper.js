@@ -1,5 +1,7 @@
 function map(arr,func){
+    let result = []
     for (let i =0 ; i < arr.length ; i++){
-        func(arr[i],i,arr)
+       result.push(func(arr[i],i,arr)) 
     }
+    return result
 }
