@@ -33,64 +33,10 @@ function tempForecasts(arr){
         obj.temperature = Math.round((obj.temperature.match(regex)-32)*(5/9))
         let objTemp = obj.state.split(" ")
         for (let i =0 ; i < objTemp.length ; i++){
-            objTemp[i][0].toUpperCase + objTemp[i].slice(1)
+           objTemp[i] = objTemp[i][0].toUpperCase() + objTemp[i].slice(1)
         }
         obj.state = objTemp.join(" ")
         return `${obj.temperature}°Celsius in ${obj.city}, ${obj.state}`
 })
     return result
 }
-console.log(tempForecasts([
-  {
-    city: 'Pasadena',
-    temperature: ' 101 °F',
-    state: 'california',
-    region: 'West',
-  },
-]));
-
-
-
-
-
-// console.log(trimTemp( [
-//     {
-//       city: 'Los Angeles',
-//       state: 'california',
-//       region: 'West',
-//       temperature: '101°F',
-//     },
-//     {
-//       city: 'San Francisco',
-//       state: 'california',
-//       region: 'West',
-//       temperature: '84°F',
-//     },
-//     { city: 'Miami', state: 'Florida', region: 'South', temperature: '112°F' },
-//     {
-//       city: 'New York City',
-//       state: 'new york',
-//       region: 'North East',
-//       temperature: '0°F',
-//     },
-//     { city: 'Juneau', state: 'Alaska', region: 'West', temperature: '21°F' },
-//     {
-//       city: 'Boston',
-//       state: 'massachussetts',
-//       region: 'North East',
-//       temperature: '45°F',
-//     },
-//     {
-//       city: 'Jackson',
-//       state: 'mississippi',
-//       region: 'South',
-//       temperature: '70°F',
-//     },
-//     { city: 'Utqiagvik', state: 'Alaska', region: 'West', temperature: '-1°F' },
-//     {
-//       city: 'Albuquerque',
-//       state: 'new mexico',
-//       region: 'West',
-//       temperature: '95°F',
-//     },
-//   ]));
