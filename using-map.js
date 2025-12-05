@@ -29,20 +29,25 @@ function trimTemp(arr){
 }
 function tempForecasts(arr){
    let result = arr.map(function(obj){
-        const regex = /(-)?\d+\s?(?=°F)/g        
+        const regex = /(-)?\d+\s?(?=°F)/g  
         obj.temperature = Math.round((obj.temperature.match(regex)-32)*(5/9))
-        obj.state = obj.state[0].toUpperCase()+obj.state.slice(1)
+        let objTemp = obj.state.split(" ")
+        for (let i =0 ; i < objTemp.length ; i++){
+            objTemp[i][0].toUpperCase + objTemp[i].slice(1)
+        }
+        obj.state = objTemp.join(" ")
         return `${obj.temperature}°Celsius in ${obj.city}, ${obj.state}`
 })
     return result
 }
-console.log(trimTemp([
-    {
-      city: 'Los Angeles',
-      state: 'california',
-      region: 'West',
-      temperature: '101°F',
-    }]));
+console.log(tempForecasts([
+  {
+    city: 'Pasadena',
+    temperature: ' 101 °F',
+    state: 'california',
+    region: 'West',
+  },
+]));
 
 
 
