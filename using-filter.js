@@ -5,7 +5,7 @@ function filterShortStateName(arr){
 }
 function filterStartVowel(arr){
     return arr.filter(function(str){
-        return (str.match(/^(a|e|i|o|u)/))
+        return (str.match(/^(a|e|i|o|u)/i))
     })
 }
 function filter5Vowels(arr){
@@ -34,3 +34,17 @@ function multiFilter(arr){
         }
     })
 }
+// console.log(filterStartVowel([
+//     'Alabama',
+//     'Alaska',
+//     'Arizona',
+//     'Arkansas',
+//     'Idaho',
+//     'Illinois',
+//     'Indiana',
+//     'Iowa',
+//     'Ohio',
+//     'Oklahoma',
+//     'Oregon',
+//     'Utah',
+//   ]));
