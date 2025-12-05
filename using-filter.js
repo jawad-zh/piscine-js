@@ -13,9 +13,7 @@ function filter5Vowels(arr){
          return (5 <=str.match(/[aueio]/g).length)
     })
 }
-function filter1DistinctVowel(arr){
-    console.log("----------",);
-    
+function filter1DistinctVowel(arr){    
     return arr.filter(function(str){
         let vawol = str.toLowerCase().match(/[aeiuo]/g)
         let unique = new Set(vawol)
@@ -28,8 +26,8 @@ function filter1DistinctVowel(arr){
 function multiFilter(arr){
  return  arr.filter(function(obj){
         if (obj.capital.length>=8 && 
-            /^[^aeiuo]/.test(obj.name)&&
-            /[aeiuo]/.test(obj.tag)&&
+            /^[^aeiuo]/i.test(obj.name)&&
+            /[aeiuo]/i.test(obj.tag)&&
             obj.region !== 'South'
         ){
             return obj
