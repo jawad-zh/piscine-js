@@ -30,7 +30,7 @@ function trimTemp(arr){
 function tempForecasts(arr){
    let result = arr.map(function(obj){
         const regex = /(-)?\d+\s?(?=°F)/g  
-        obj.temperature = Math.round((obj.temperature.match(regex)-32)*(5/9))
+        obj.temperature = Math.floor((obj.temperature.match(regex)-32)*(5/9))
         let objTemp = obj.state.split(" ")
         for (let i =0 ; i < objTemp.length ; i++){
            objTemp[i] = objTemp[i][0].toUpperCase() + objTemp[i].slice(1)
