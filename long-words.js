@@ -1,18 +1,16 @@
-function longWords(arr){
-    let compar =arr.filter(function(str){
-        return (typeof(str)=== 'string' && str.length>=5)
+function longWords(arr) {
+    return arr.every(function (str) {
+        return (typeof (str) === 'string' && str.length >= 5)
     })
-    return compar.length === arr.length
 }
-function oneLongWord(arr){
-    let compar = arr.filter(function(str){
-        return (typeof(str)==='string' && str.length >=10)
+function oneLongWord(arr) {
+    return arr.some(function (str) {
+        return (typeof (str) === 'string' && str.length >= 10)
     })
-    return compar.length >= 1
 }
-function noLongWords(arr){
-    let compar =arr.filter(function(str){
-        return (typeof(str) === 'string' && str.length>=7 )
+function noLongWords(arr) {
+    let flag = arr.some(function (str) {
+        return typeof (str) === 'string' && str.length >= 7
     })
-    return compar.length === 0
+    return !flag
 }
