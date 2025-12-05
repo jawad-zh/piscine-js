@@ -27,5 +27,7 @@ function partition(arr,func){
             no.push(arr[i])
         }
     }
-   return  result.push(ok,no)
+    result.push(ok)
+    result.push(no)
+    return result
 }
