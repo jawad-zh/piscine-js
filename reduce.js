@@ -1,8 +1,8 @@
 function fold(arr,func,acc){
-    let result =[]
-   let temp = [acc,...arr]
-    for (let i =0 ; i < temp.length ; i++){
-        result.push(func(temp[i],i,temp))
+
+    for (let i =0 ; i < arr.length ; i++){
+        acc = func(arr[i],i,arr)
     }
-    return result
+    return acc
 }
+
