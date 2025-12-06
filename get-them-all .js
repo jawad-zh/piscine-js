@@ -25,7 +25,7 @@ export function getActive(){
 export function getBonannoPisano(){
     let result = []
     let bonannoPisano = document.getElementById('BonannoPisano')
-    let rest = Array.from(document.querySelectorAll('a.classical.active')).filter(a=> a.id != 'BonannoPusano')
+    let rest = Array.from(document.querySelectorAll('a.classical.active'))
   result.push(bonannoPisano)
   result.push(rest)
   return result
