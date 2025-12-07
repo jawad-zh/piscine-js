@@ -1,24 +1,25 @@
 import { styles } from "./pimp-my-style.data.js"
-let position =0
-let add = true 
-export function pimp(){
-   
+let position = 0
+let add = true
+export function pimp() {
     let button = document.querySelector('.button')
-        if (button.classList.contains('fifteen')){
-        button.add('unpimp')
-        add =false
-    }else if(!button.classList.contains('one') && button.classList.contains('unpimp')){
-        button.remove('unpimp')
-        add = true
-    }
-    if (add){
+    if (add) {
         button.classList.add(styles[position])
-        position ++
-    }else{
-        button.classList.remove(styles[position])
+        position++
+        if (position == styles.length) {
+            button.classList.add('unpimp')
+            add = false
+        }
+
+    } else {
         position--
+        button.classList.remove(styles[position])
+        if (position === 0) {
+            button.classList.remove('unpimp')
+            add = true
+        }
     }
-    }
-    
-        
+}
+
+
 
