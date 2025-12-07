@@ -1,4 +1,4 @@
-import { colors } from "./fifty-shades-of-cold.data"
+import { colors } from "./fifty-shades-of-cold.data.js"
 export function generateClasses(){
     let style = document.createElement('style')
     let css=""
