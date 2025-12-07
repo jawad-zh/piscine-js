@@ -7,7 +7,7 @@ export function build(num){
         brik.id = `brick-${brickId}`
         brickId++
         if (count%3 === 2){
-            brik.setAttribute('foundation','true')
+            brik.setAttribute('data-foundation','true')
         }
         document.body.append(brik)
         if (count >=num){
@@ -20,10 +20,10 @@ export function build(num){
 export function repair(...ids){
     for (let i =0 ; i < ids.length ; i++){
         let brick = document.getElementById(ids[i])
-        if (brick.getAttribute('foundation') === 'true'){
-            brick.setAttribute('repaired','inprogress')
+        if (brick.hasAttribute('data-foundation') ){
+            brick.setAttribute('data-repaired','in progress')
         }else{
-            brick.setAttribute('repaired','true')
+            brick.setAttribute('data-repaired','true')
         }
     }
 
