@@ -2,15 +2,13 @@
 export function build(num){
     let count =1 
     let brickId = 1
-    let middl = 2
     let id = setInterval(function(){
         let brik = document.createElement('div')
         brik.id = `brick-${brickId}`
         brickId++
-        if (middl%3 === 0){
+        if (count%3 === 2){
             brik.setAttribute('foundation','true')
         }
-        middl++
         document.body.append(brik)
         if (count >=num){
             clearInterval(id)
