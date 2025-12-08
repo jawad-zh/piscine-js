@@ -29,6 +29,8 @@ function omit(obj,arrOrStr){
             }
             if (!found){
                 result[keys[i]] = obj[keys[i]]
+            }else{
+                found = false
             }
      }else{        
         if(arrOrStr != keys[i]){            
@@ -45,4 +47,4 @@ console.log(omit({
    'saws': ' Makita'
   
 
-},'grinders'));
+},['board', 'cards']));
