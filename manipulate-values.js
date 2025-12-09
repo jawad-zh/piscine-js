@@ -1,4 +1,4 @@
-function filterValues(func,obj){
+function filterValues(obj,func){
     let result = {}
     let keys = Object.keys(obj)
     for (let i = 0 ; i < keys.length ; i++){        
@@ -8,7 +8,7 @@ function filterValues(func,obj){
     }
     return result 
 }
-function mapValues(func,obj){
+function mapValues(obj,func){
     let result = {}
     for (let ele in obj){        
      result[ele] = func(obj[ele])
@@ -16,7 +16,7 @@ function mapValues(func,obj){
     }
     return result 
 }
-function reduceValues(func,obj){
+function reduceValues(obj,func){
     for (let ele in obj){
         acc = func(acc,obj[ele])
     }
