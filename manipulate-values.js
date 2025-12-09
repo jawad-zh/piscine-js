@@ -16,7 +16,7 @@ function mapValues(obj,func){
     }
     return result 
 }
-function reduceValues(obj,func){
+function reduceValues(obj,func,acc=0){
     for (let ele in obj){
         acc = func(acc,obj[ele])
     }
