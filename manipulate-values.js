@@ -1,18 +1,25 @@
-function filterValues(obj,func){
-    for (let ele in obj){
-        ele = func(ele)
+function filterValues(func,obj){
+    let result = {}
+    let keys = Object.keys(obj)
+    for (let i = 0 ; i < keys.length ; i++){        
+         if (func(obj[keys[i]])){
+            result[keys[i]] = obj[keys[i]]
+         }
     }
-    return obj 
+    return result 
 }
-function mapValues(obj,func){
-    for (let ele in obj){
-        ele = func(ele)
+function mapValues(func,obj){
+    let result = {}
+    for (let ele in obj){        
+     result[ele] = func(obj[ele])
+     
     }
-    return obj 
+    return result 
 }
-function reduceValues(obj,func){
+function reduceValues(func,obj){
     for (let ele in obj){
-        ele = func(acc,ele)
+        acc = func(acc,obj[ele])
     }
-    return obj 
+    return acc 
 }
+console.log(mapValues((v) => v - 50 ,{ oil: 50, garlic: 22,onion:220,tomato:200,vinegar:80 }));
