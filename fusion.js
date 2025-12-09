@@ -12,7 +12,7 @@ function fusion(obj1, obj2) {
                 obj1[keysobj2[i]] = obj1[keysobj2[i]]+" " +obj2[keysobj2[i]]
             }else if ( typeof obj1[keysobj2[i]] == 'object' && typeof obj2[keysobj2[i]] == 'object' ){
                 
-                fusion(obj1[keysobj2[i]],obj2[keysobj2])
+                fusion(obj1[keysobj2[i]],obj2[keysobj2[i]])
             }else{
                 obj1[keysobj2[i]] = obj2[keysobj2[i]]
             }
@@ -20,3 +20,6 @@ function fusion(obj1, obj2) {
     }
     return obj1
 }
+console.log(fusion({ a: { b: [1, 2], c: { d: 2 } } },
+      { a: { b: [0, 2, 1], c: { d: 23 } } }));
+    //   `{ a: { b: [1, 2, 0, 2, 1], c: { d: 25 } } }`
