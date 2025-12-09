@@ -22,4 +22,3 @@ function reduceValues(func,obj){
     }
     return acc 
 }
-console.log(mapValues((v) => v - 50 ,{ oil: 50, garlic: 22,onion:220,tomato:200,vinegar:80 }));
