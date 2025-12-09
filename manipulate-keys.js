@@ -19,7 +19,7 @@ function mapKeys(obj,func){
 function reduceKeys(obj,func,acc){
     let flag = false
     let keys = Object.keys(obj)
-    flag = acc ? true : false
+    flag = acc!= undefined ? true : false
     if (!flag){
         acc = keys[0]
         keys= keys.slice(1)
