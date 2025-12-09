@@ -19,7 +19,6 @@ function mapKeys(obj,func){
 function reduceKeys(obj,func,acc){
     let keys = Object.keys(obj)
     acc = acc ? acc : keys[0]
-    keys = keys.slice(1)
     for (let i =0 ; i < keys.length ; i++){
         acc = func(acc,keys[i])
     }
