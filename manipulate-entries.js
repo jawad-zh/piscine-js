@@ -18,7 +18,7 @@ function mapEntries(obj,func){
 function reduceEntries(obj,func,acc=0){
     let keyValue = Object.entries(obj)
     for (let i =0 ; i < keyValue.length ; i++){
-        acc = func(keyValue[i])
+        acc += func(keyValue[i])
     }
     return acc
 }
