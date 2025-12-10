@@ -1,4 +1,7 @@
 function deepCopy(objOrArr){
+    if (objOrArr instanceof RegExp){
+        return new RegExp(objOrArr)
+    }
     if (Array.isArray(objOrArr)){        
         let arrayResult = []
         for(let i =0 ; i < objOrArr.length ; i++){
