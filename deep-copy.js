@@ -1,7 +1,7 @@
 function deepCopy(objOrArr){
     if (Array.isArray(objOrArr)){        
         let arrayResult = []
-        for(let i =0 ; i < objOrArr ; i++){
+        for(let i =0 ; i < objOrArr.length ; i++){
             if (typeof objOrArr[i] === 'object'){                
                 deepCopy(objOrArr[i])
             }else{                
