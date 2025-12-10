@@ -51,13 +51,10 @@ function cartTotal(obj){
     let result = {}
     let keys = Object.keys(obj)
     for (let i =0 ; i < keys.length ; i++){
-       let temp = mapEntries(nutritionDB[keys[i]],function(arr){
-            for (let i =0 ; i < arr.length ;i++){
-
-                arr[i] = [arr[i][0],arr[i][1]*obj[keys[i]]/100]
-            }
+       result[keys[i]] = mapEntries(nutritionDB[keys[i]],function(arr){
+                let temp = +((arr[1]*obj[keys[i]]/100).toFixed(3))
+                return [arr[0],temp]
         })
-        result = {temp}
     }
     return result
 }
