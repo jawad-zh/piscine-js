@@ -22,7 +22,7 @@ function reduceEntries(obj,func,acc){
         acc = keyValue.shift()
     }
     for (let i =0 ; i < keyValue.length ; i++){
-        acc += func(keyValue[i])
+        acc = func(acc, keyValue[i])
     }
     return acc
 }
