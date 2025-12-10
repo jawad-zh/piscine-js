@@ -62,8 +62,8 @@ function reduceScore(personnel,acc){
     let filters = filterCurry(([k, v]) => v.isForceUser )(personnel)
     return reduceCurry((acc,[k,v])=> acc + v.pilotingScore+v.shootingScore)(filters,acc)
 }
-function filterForce(){
-    
+function filterForce(obj){
+    return filterCurry(([k,v])=> v.shootingScore >= 80 &&v.isForceUser)(obj)
 }
 function mapAverage(ob){
      let filters = filterCurry(([k, v]) => v.isForceUser )(ob)
@@ -72,4 +72,14 @@ function mapAverage(ob){
        let avrage = (ob[filtredKeys[i]].pilotingScore + ob[filtredKeys[i]].shootingScore)/2
        ob[filtredKeys[i]]["averageScore"] = avrage
      }
+     return ob
 }
+// prettier-ignore
+const personnel = {
+  lukeSkywalker: { id: 5,  pilotingScore: 98, shootingScore: 56, isForceUser: true  },
+  sabineWren:    { id: 82, pilotingScore: 73, shootingScore: 99, isForceUser: false },
+  zebOrellios:   { id: 22, pilotingScore: 20, shootingScore: 59, isForceUser: false },
+  ezraBridger:   { id: 15, pilotingScore: 43, shootingScore: 67, isForceUser: true  },
+  calebDume:     { id: 11, pilotingScore: 71, shootingScore: 85, isForceUser: true  },
+}
+console.log(mapAverage(personnel));
