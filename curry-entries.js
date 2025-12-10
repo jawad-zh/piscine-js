@@ -36,19 +36,25 @@ function mapCurry(func){
     return Object.fromEntries(keyValue)
     }
 }
-function reduceCurry(){
-    
+function reduceCurry(func){
+    return function(obj,acc){
+        let keyValue = Object.entries(obj)
+        for (let i =0 ; i < keyValue.length ; i++){
+            acc = func(acc,keyValue[i])
+        }
+        return acc
+    }
+
 }
-// console.log(defaultCurry({ http: 403, age: 0, connection: 'close' })({
-//       http: 200,
-//       age: 30,
-//       connection: 'keep-alive',
-//       content_type: 'text/css',
-//     }));
-//  {
-//     age: 30,
-//     connection: 'keep-alive',
-// -   content_type: 'text/css',
-//     http: 200
-//   }
- console.log(mapCurry(([k, v]) => [`${k}🤙🏼`, `${v}🤙🏼`])({ emoji: 'cool' }))
+function filterCurry(func){
+    return function(obj){
+        let keyValue = Object.entries(obj)
+        let result ={}
+        for (let i =0 ; i < keyValue.length ;i++){
+            if (func(keyValue[i],obj)){
+                result[keyValue[i][0]] = keyValue[i][1] 
+            }
+        }
+         return result
+    }
+}
