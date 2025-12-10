@@ -31,10 +31,10 @@ function totalCalories(obj){
     let result =0
      let objKeys = Object.keys(obj)
    for (let i =0 ; i < objKeys.length ; i++){
-      let temp = (nutritionDB[objKeys[i]].calories * obj[objKeys[i]])/100
+      let temp = ((nutritionDB[objKeys[i]].calories * obj[objKeys[i]])/100)
       result+=temp     
    }
-    return result
+    return +(result.toFixed(1))
    
 }
 function lowCarbs(obj){
