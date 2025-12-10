@@ -15,8 +15,12 @@ function mapEntries(obj,func){
     }
     return Object.fromEntries(keyValue)
 }
-function reduceEntries(obj,func,acc=0){
+function reduceEntries(obj,func,acc){
     let keyValue = Object.entries(obj)
+    if (acc === undefined) {
+        
+        acc = keyValue.shift()
+    }
     for (let i =0 ; i < keyValue.length ; i++){
         acc += func(keyValue[i])
     }
