@@ -1,15 +1,15 @@
-    function debounce(func,await){
+    function debounce(func,wait){
         let id;
         return function(...arg){
             if( id ){
                 clearInterval(id)
             }
-             id =setTimeout(() => func(...arg),await)
+             id =setTimeout(() => func(...arg),wait)
         }
         
     }
 
-    function opDebounce(func,await,leading=false){
+    function opDebounce(func,wait,leading=false){
         let id;
         return function(...arg){
             if (leading){
@@ -19,7 +19,7 @@
         if (id){
             clearTimeout(id)
         }
-        id = setTimeout(() => func(...arg) ,await)
+        id = setTimeout(() => func(...arg) ,wait)
 
         }
     }
