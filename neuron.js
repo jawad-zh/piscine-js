@@ -10,17 +10,17 @@ function neuron(arr){
             order = true
         }
         if (!order){
-            if (!result['quetions']) {
-            result['quetions']={}
+            if (!result['questions']) {
+            result['questions']={}
         }
         key=key.replaceAll(/\!|\?/g,"")
-        if (!result['quetions'][key]){
-        result['quetions'][key] ={
+        if (!result['questions'][key]){
+        result['questions'][key] ={
             'question':quetion.trim(),
                 'responses': []
         }
         }
-        result.quetions[key].responses.push(response)
+        result.questions[key].responses.push(response)
         }else{
               if (!result['orders']) {                
             result['orders']={}
@@ -39,7 +39,7 @@ function neuron(arr){
     }
     return result
 }
-console.log(neuron([
+console.log( neuron([
       'Questions: what is life? - Response: The condition that distinguishes animals and plants from inorganic matter',
       'Questions: what is life? - Response: Life is a characteristic that distinguishes physical entities that have biological processes',
-    ]));
+    ]).questions.what_is_life);
