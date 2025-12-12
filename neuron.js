@@ -15,24 +15,20 @@ function neuron(arr){
         }
         if (!result['quetions'][key]){
         result['quetions'][key] ={
-            'question':quetion,
+            'question':quetion.trim(),
                 'responses': []
         }
         }
         result.quetions[key].responses.push(response)
         }else{
-              if (!result['orders']) {
-                console.log('----------');
-                
+              if (!result['orders']) {                
             result['orders']={}
         }
         key=key.replaceAll(/\!|\?/g,"")
         
-        if (!result['orders'][key]){
-            console.log('++++++++++++++');
-            
+        if (!result['orders'][key]){            
         result['orders'][key] ={
-            'order':quetion,
+            'order':quetion.trim(),
                 'responses': []
         }
         }
@@ -42,3 +38,6 @@ function neuron(arr){
     }
     return result
 }
+console.log(neuron(['Orders: shutdown please! - Response: no!']).orders.shutdown_please,
+    { order: 'shutdown please!', responses: ['no!'] }
+  )
