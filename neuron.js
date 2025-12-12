@@ -22,9 +22,15 @@ function neuron(arr){
         result.quetions[key].responses.push(response)
         }else{
               if (!result['orders']) {
+                console.log('----------');
+                
             result['orders']={}
         }
+        key=key.replaceAll(/\!|\?/g,"")
+        
         if (!result['orders'][key]){
+            console.log('++++++++++++++');
+            
         result['orders'][key] ={
             'order':key,
                 'responses': []
