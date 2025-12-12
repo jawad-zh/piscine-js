@@ -15,7 +15,7 @@ function neuron(arr){
         }
         if (!result['quetions'][key]){
         result['quetions'][key] ={
-            'question':key,
+            'question':quetion,
                 'responses': []
         }
         }
@@ -32,7 +32,7 @@ function neuron(arr){
             console.log('++++++++++++++');
             
         result['orders'][key] ={
-            'order':key,
+            'order':quetion,
                 'responses': []
         }
         }
