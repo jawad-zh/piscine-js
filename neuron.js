@@ -13,6 +13,7 @@ function neuron(arr){
             if (!result['quetions']) {
             result['quetions']={}
         }
+        key=key.replaceAll(/\!|\?/g,"")
         if (!result['quetions'][key]){
         result['quetions'][key] ={
             'question':quetion.trim(),
@@ -38,6 +39,7 @@ function neuron(arr){
     }
     return result
 }
-console.log(neuron(['Orders: shutdown please! - Response: no!']).orders.shutdown_please,
-    { order: 'shutdown please!', responses: ['no!'] }
-  )
+console.log(neuron([
+      'Questions: what is life? - Response: The condition that distinguishes animals and plants from inorganic matter',
+      'Questions: what is life? - Response: Life is a characteristic that distinguishes physical entities that have biological processes',
+    ]));
