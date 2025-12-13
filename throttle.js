@@ -9,25 +9,34 @@ function throttle(func, wait) {
       , wait)
   }
 }
-function opThrottle(func, wait, leading = true, trailing) {
-  let run = leading ? true : false
-  let lastArg
+function opThrottle(func, wait, leading = true, trailing = true) {
+  let run = leading
+  let lastArg = null
+  let timer = null
+
   return function (...arg) {
     if (!run) {
-      if (trailing){
-        lastArg = arg
+      if (trailing) lastArg = arg
+      if (trailing && !timer) {
+        timer = setTimeout(() => {
+          func(...lastArg)
+          lastArg = null
+          run = true
+          timer = null
+        }, wait)
       }
-      return 
+      return
     }
     func(...arg)
     run = false
-    setTimeout(() =>
+
+    timer = setTimeout(() => {
+      if (trailing && lastArg) {
+        func(...lastArg)
+        lastArg = null
+      }
       run = true
-      , wait)
-      if (trailing&& lastArg){
-     setTimeout(()=>{
-      func(...arg)
-     },wait) 
-    }
+      timer = null
+    }, wait)
   }
 }
