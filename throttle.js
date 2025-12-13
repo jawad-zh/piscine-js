@@ -21,8 +21,8 @@ function opThrottle(func, wait, leading = true, trailing = true) {
         timer = setTimeout(() => {
           func(...lastArg)
           lastArg = null
-          run = true
           timer = null
+          run = leading   
         }, wait)
       }
       return
@@ -35,7 +35,7 @@ function opThrottle(func, wait, leading = true, trailing = true) {
         func(...lastArg)
         lastArg = null
       }
-      run = true
+      run = leading   
       timer = null
     }, wait)
   }
