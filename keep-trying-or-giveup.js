@@ -1,5 +1,5 @@
-function retry(count,callback){
-    return async function(...args){
+async function  retry(count,callback){
+    return  async function(...args){
         for (let i =0 ; i < count ; i++){
 
             try{
@@ -11,7 +11,7 @@ function retry(count,callback){
         }
     }
 }
-function timeout(delay,callback){
+async function timeout(delay,callback){
     return async function(...args) {
         const result = await callback(...args)
         const compar = new Promise((_, reject) => {
