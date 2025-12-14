@@ -6,8 +6,7 @@ function retry(count, callback) {
                 let result = await callback(...args)
                 return result
             } catch (err) {
-                if (count === i-1) {
-
+                if (i === count-1) {
                     throw err
                 }
             }
