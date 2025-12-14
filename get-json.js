@@ -5,7 +5,7 @@ async function getJSON(path,params){
     }
     let respons = await fetch(path)
     if (!respons.ok){
-        throw new Error(respons.text)
+        throw new Error(respons.statusText)
     }
     let data = await respons.json()
     return data 
