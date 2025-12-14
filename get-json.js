@@ -1,7 +1,7 @@
 async function getJSON(path,params){
     if (params){
         let Query = new URLSearchParams(params)
-        path += Query
+        path += '?'+Query
     }
     let respons = await fetch(path)
     if (!respons.ok){
