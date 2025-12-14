@@ -16,7 +16,7 @@ function retry(count, callback) {
 }
 function timeout(delay, callback) {
     return async function (...args) {
-        const result = await callback(...args)
+        const result =  callback(...args)
         const compar = new Promise((_, reject) => {
             setTimeout(() => reject(new Error('timeout')), delay)
         })
