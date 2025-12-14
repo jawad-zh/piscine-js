@@ -1,22 +1,25 @@
-async function  retry(count,callback){
-    return  async function(...args){
-        for (let i =0 ; i < count ; i++){
+function retry(count, callback) {
+    return async function (...args) {
+        for (let i = 0; i < count; i++) {
 
-            try{
+            try {
                 let result = await callback(...args)
                 return result
-            }catch(err){
-                throw err
+            } catch (err) {
+                if (count === i) {
+
+                    throw err
+                }
             }
         }
     }
 }
-async function timeout(delay,callback){
-    return async function(...args) {
+function timeout(delay, callback) {
+    return async function (...args) {
         const result = await callback(...args)
         const compar = new Promise((_, reject) => {
-            setTimeout(()=> reject(new Error('timeout')),delay)
+            setTimeout(() => reject(new Error('timeout')), delay)
         })
-        return Promise.race([result,compar])
+        return Promise.race([result, compar])
     }
 }
