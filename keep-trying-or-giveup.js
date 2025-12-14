@@ -1,16 +1,14 @@
 function retry(count, callback) {
     return async function (...args) {
-        let lastError
         for (let i = 0; i <= count; i++) {
-
             try {
-                let result = await callback(...args)
-                return result
+                return await callback(...args)
             } catch (err) {
-                    lastError = err
+                    if (i === count){
+                        throw err
+                    }
             }
         }
-        throw lastError
     }
 }
 function timeout(delay, callback) {
